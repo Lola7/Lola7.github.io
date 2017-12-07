@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>测试用例</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 内核控制 -->
+    <meta name="renderer" content="webkit">
+    <!-- 告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+
+</head>
+
+<body>
+    <form id="form1">
+        <label>用户名：</label>
+        <input type="text" id="input" maxlength="5" name="input-text" value="233" required>
+        <label>密码：</label>
+        <input type="textarea" name="input-textarea" required>
+        <br>
+        <label>几种表单控件：</label>
+        <input type="number" min="0" max="10" step="2" name="input-number">
+        <select name="select-number">
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+        </select>
+        <input type="submit" value="提交">
+    </form>
+   
+
+   <script type="text/javascript">
+        var str = encodeURI("http://www.baidu.com");
+        console.log(str);
+
+        var str2 = encodeURIComponent("http://www.baidu.com");
+        console.log(str2);
+
+        var str3 = decodeURI(str);
+        console.log(str3);
+
+        var str4 = decodeURIComponent(str2);
+        console.log(str4);
+
+        var str5 = [4,5,2,10,6,8,4,9];
+        console.log(str5.sort());
+
+        var input1 = document.getElementById("input");
+        input1.onclick = function (event) {
+            console.log(this.value);
+        };
+
+        // var form1 = document.getElementById("form1");
+        var textBox = document.forms[0].elements[0];
+        textBox.select();
+        textBox.onfocus = function () {
+            this.select();
+        };
+
+        var selectBox = document.forms[0].elements["select-number"];
+        selectBox.multiple = true;
+        selectBox.onclick = function () {
+            console.log(this.value);
+        };
+    </script>
+</body>
+</html>
