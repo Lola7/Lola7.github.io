@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <title>测试用例</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 内核控制 -->
+    <meta name="renderer" content="webkit">
+    <!-- 告诉IE使用最新的引擎渲染网页，chrome=1则可以激活Chrome Frame -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <style type="text/css">
+        .layout{padding:20px; }
+        .fit-content{margin: 10px auto 20px; width: -webkit-fit-content; width: -moz-fit-content; width: fit-content; background-color: #c8eaf0;}
+        .min-content{width: min-content; background-color: #c8eaf0;}
+        .max-content{width: max-content; background-color: #c8eaf0;}
+        .fill-available{display:inline-block; line-height:20px; width: fill-available; width: -webkit-fill-available; width: -moz-fill-available; width: -moz-available;/* FireFox目前这个生效 */background-color: #5fa333;}
+        .box{margin:20px; height: 100px; line-height: 100px; background-color: #eee;}
+    </style>
+</head>
+<body>
+    <div class="layout">
+        <!-- width属性值测试 -->
+        <div class="fit-content">
+            <p>width:fit-content</p>
+            <img src="image/figure.jpg">
+        </div>
+        <div class="min-content">
+            <p>width:min-content</p>
+            <img src="image/figure.jpg">最小内容宽度取值为内部元素最小宽度的最大值.如果全部是中文，则最小宽度值就是一个中文的宽度值；如果包含英文，因为默认英文单词不换行，所以，最小宽度可能就是里面最长的英文单词的宽度。
+        </div>
+        <div class="max-content">
+            <p>width:min-content</p>
+            <img src="image/figure.jpg">最小内容宽度取值为内部元素最小宽度的最大值.如果全部是中文，则最小宽度值就是一个中文的宽度值；如果包含英文，因为默认英文单词不换行，所以，最小宽度可能就是里面最长的英文单词的宽度。
+        </div>
+        <div class="box">
+            <div class="fill-available">
+                width:fill-available可以让元素的宽度表现为默认的block水平元素的尺寸表现。
+            </div>
+        </div>        
+    </div>
+</body>
+</html>

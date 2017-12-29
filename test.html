@@ -28,9 +28,9 @@
             <option value="5">5</option>
             <option value="6">6</option>
         </select>
-        <input type="submit" value="提交">
+        <input type="submit" value="提交" id="submit">
     </form>
-   
+   <input type="button" id="back" value="后退">
 
    <script type="text/javascript">
         var str = encodeURI("http://www.baidu.com");
@@ -61,10 +61,38 @@
         };
 
         var selectBox = document.forms[0].elements["select-number"];
-        selectBox.multiple = true;
+        // selectBox.multiple = true;
         selectBox.onclick = function () {
             console.log(this.value);
         };
+
+        var nodeLists = selectBox.childNodes;
+        var nodes = Array.prototype.slice.call(nodeLists, 0);
+console.log(nodes);
+console.log(nodeLists);
+    
+        document.title = "abc";
+console.log("document domain:  "+ document.domain);
+console.log("document referrer:  "+ document.referrer);
+
+        var inputs = document.getElementsByTagName("input");
+console.log(inputs["input-number"]);
+
+        var submit = document.forms[0].elements["submit"];
+        submit.onclick = function () {
+            window.location.hash = "#submit";
+        };
+
+        var goback = document.getElementById("back");
+        goback.onclick = function () {
+            window.history.go(-1);
+        };
+
+        var arrLike1 = (1,2,3), arrLike2 = "1,2,3";
+        var arr = Array.prototype.slice.call("123");
+console.info(arr);
+// console.log("转换类数组对象/集合为数组" + Array.prototype.slice.call(arrLike1, 0));
+console.log("转换类数组对象/集合为数组" + arr.toString());
     </script>
 </body>
 </html>
